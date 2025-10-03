@@ -25,7 +25,11 @@ const CollaboratorList = () => {
           {collaborators.map(collab => (
             <div key={collab.id} className="grid grid-cols-12 gap-4 items-center px-4 py-3 hover:bg-gray-50">
               <div className="col-span-4 flex items-center">
-                <img src={collab.avatar} alt={collab.name} className="w-10 h-10 rounded-full mr-4" />
+                <img 
+                  src={collab.avatar} 
+                  alt={collab.name} 
+                  className="w-12 h-12 rounded-full object-cover mr-4" 
+                />
                 <span className="font-semibold text-gray-800">{collab.name}</span>
               </div>
               <div className="col-span-2 text-gray-600">{collab.matricula}</div>
