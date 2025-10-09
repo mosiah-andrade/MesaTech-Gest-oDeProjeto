@@ -3,18 +3,34 @@ import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import './index.css';
 
-// Seus componentes de página
+// 1. Importe o novo Layout
+import MainLayout from './components/MainLayout.jsx';
+
+// Importe suas páginas
 import Projetos from './pages/Projetos.jsx'; 
 import Home from './pages/Home.jsx';
+import Colaboradores from './pages/Colaboradores.jsx';
 
 const router = createBrowserRouter([
   {
+    // 2. A rota "pai" agora é o MainLayout
     path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/projetos",
-    element: <Projetos />,
+    element: <MainLayout />,
+    // 3. As páginas agora são "children" (filhas) do Layout
+    children: [
+      {
+        path: "/", // Rota exata para a Home
+        element: <Home />,
+      },
+      {
+        path: "projetos",
+        element: <Projetos />,
+      },
+      {
+        path: "colaboradores",
+        element: <Colaboradores />,
+      },
+    ]
   },
 ]);
 

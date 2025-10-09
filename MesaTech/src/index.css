@@ -1,2 +1,15 @@
 
 @import "tailwindcss";
+
+
+:root{
+    --primary-red: #C62828; 
+    --main-bg: #F5F5F5; 
+}
+.bg-primary-red{
+    background-color: var(--primary-red);
+}
+
+body {
+  background-color:  var(bg-main-bg);
+}

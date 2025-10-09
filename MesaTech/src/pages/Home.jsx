@@ -1,30 +1,15 @@
-// /src/Home.js
-
-import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
+// /src/pages/Home.jsx
+import React from 'react';
 import ProjectList from '../components/ProjectList';
 import CollaboratorList from '../components/CollaboratorList';
 
 function Home() {
-  const [isSidebarOpen, setSidebarOpen] = useState(true);
-
-  const toggleSidebar = () => {
-    setSidebarOpen(!isSidebarOpen);
-  };
-
+  // A lógica de estado e os componentes Sidebar/Header foram removidos
   return (
-    <div className="flex h-screen bg-gray-50 font-sans">
-      <Sidebar isOpen={isSidebarOpen} toggle={toggleSidebar} />
-      
-      <div className="flex-1 flex flex-col overflow-hidden">
-        <Header />
-        <main className="flex-1 p-8 overflow-y-auto">
-          <ProjectList />
-          <CollaboratorList />
-        </main>
-      </div>
-    </div>
+    <main className="flex-1 p-8 overflow-y-auto">
+      <ProjectList />
+      <CollaboratorList />
+    </main>
   );
 }
 
