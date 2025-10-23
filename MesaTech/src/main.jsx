@@ -10,7 +10,7 @@ import MainLayout from './components/MainLayout.jsx';
 import Projetos from './pages/Projetos.jsx'; 
 import Home from './pages/Home.jsx';
 import Colaboradores from './pages/Colaboradores.jsx';
-import ColaboradoresPerfil from './pages/ColaboradoresPerfil.jsx';
+import ColaboradoresPerfil from "./pages/colaboradoresPerfil.jsx"
 
 const router = createBrowserRouter([
   {
