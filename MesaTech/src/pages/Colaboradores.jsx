@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
 import { collaborators } from '../data/mockData';
 import { FiPlus, FiEdit, FiTrash2, FiFilter } from 'react-icons/fi';
+import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 
 // Componente de lista de colaboradores adaptado para esta página
 const CollaboratorTable = () => {
@@ -20,7 +19,7 @@ const CollaboratorTable = () => {
       {/* Corpo da Tabela */}
       <div>
         {collaborators.map(collab => (
-          <div key={collab.id} className="flex items-center px-6 py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-50">
+          <Link to={`colaboradoresPerfil/id:${collab.id}`}  key={collab.id} className="flex items-center px-6 py-3 border-b border-gray-100 last:border-b-0 hover:bg-gray-50" >
             <div className="w-4/12 flex items-center">
               <img 
                 src={collab.avatar} 
@@ -39,7 +38,7 @@ const CollaboratorTable = () => {
               <button className="text-gray-500 hover:text-blue-600 p-1"><FiEdit size={18}/></button>
               <button className="text-gray-500 hover:text-red-600 p-1"><FiTrash2 size={18}/></button>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </div>

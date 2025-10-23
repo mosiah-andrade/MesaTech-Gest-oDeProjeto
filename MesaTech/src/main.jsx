@@ -10,6 +10,7 @@ import MainLayout from './components/MainLayout.jsx';
 import Projetos from './pages/Projetos.jsx'; 
 import Home from './pages/Home.jsx';
 import Colaboradores from './pages/Colaboradores.jsx';
+import ColaboradoresPerfil from './pages/ColaboradoresPerfil.jsx';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: "colaboradores",
         element: <Colaboradores />,
+      },
+      {
+        path: "colaboradoresPerfil/id:",
+        element: <ColaboradoresPerfil />,
       },
     ]
   },

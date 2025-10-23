@@ -1,8 +1,6 @@
 // /src/pages/Projetos.jsx
 
 import React, { useState } from 'react';
-import Sidebar from '../components/Sidebar';
-import Header from '../components/Header';
 import { FiChevronDown, FiCalendar, FiUserPlus, FiPlus } from 'react-icons/fi';
 
 // Dados de exemplo para a página
@@ -14,10 +12,10 @@ const projectData = {
   startDate: '05/07/2025',
   endDate: '10/02/2026',
   collaborators: [
-    { id: 1, name: 'Lucas Andrade Soares', role: 'Product Owner', avatar: 'https://i.pravatar.cc/150?img=5', tasks: { 'Set. 1 - Set. 6': { hours: '18h', title: 'Definir e priorizar o backlog do produto' } } },
-    { id: 2, name: 'Mariana Costa Nogueira', role: 'Scrum Master', avatar: 'https://i.pravatar.cc/150?img=6', tasks: { 'Set. 7 - Set. 13': { hours: '2h', title: 'Facilitar cerimônias ágeis' }, 'Set. 14 - Set. 20': { hours: '2h', title: 'Apoiar na melhoria contínua do time' }, 'Set. 21 - Set. 27': { hours: '2h', title: 'Acompanhar métricas de produtividade' } } },
-    { id: 3, name: 'Carolina Martins Figueiredo', role: 'Designer de UX/UI', avatar: 'https://i.pravatar.cc/150?img=3', tasks: { 'Set. 1 - Set. 6': { hours: '4h', title: 'Criar wireframes e protótipos de baixa fidelidade' }, 'Set. 21 - Set. 27': { hours: '15h', title: 'Desenvolver design system e manter a consistência visual' } } },
-    { id: 4, name: 'Beatriz Oliveira Ramos', role: 'Desenvolvedor Backend', avatar: 'https://i.pravatar.cc/150?img=1', tasks: { 'Set. 7 - Set. 13': { hours: '8h', title: 'Desenvolver APIs e serviços RESTful' }, 'Set. 14 - Set. 20': { hours: '10h', title: 'Criar e gerenciar banco de dados' } } },
+    { id: 1, name: 'Lucas Andrade Soares', role: 'Product Owner', avatar: 'https://i.pravatar.cc/150?img=5', tasks: { 'Set. 1 - Set. 6': { hours: '18h' } } },
+    { id: 2, name: 'Mariana Costa Nogueira', role: 'Scrum Master', avatar: 'https://i.pravatar.cc/150?img=6', tasks: { 'Set. 7 - Set. 13': { hours: '2h' }, 'Set. 14 - Set. 20': { hours: '2h' }, 'Set. 21 - Set. 27': { hours: '2h' } } },
+    { id: 3, name: 'Carolina Martins Figueiredo', role: 'Designer de UX/UI', avatar: 'https://i.pravatar.cc/150?img=3', tasks: { 'Set. 1 - Set. 6': { hours: '4h' }, 'Set. 21 - Set. 27': { hours: '15h'} } },
+    { id: 4, name: 'Beatriz Oliveira Ramos', role: 'Desenvolvedor Backend', avatar: 'https://i.pravatar.cc/150?img=1', tasks: { 'Set. 7 - Set. 13': { hours: '8h' }, 'Set. 14 - Set. 20': { hours: '10h' } } },
   ]
 };
 
@@ -112,8 +110,9 @@ function Projetos() {
                       <div key={week} className="col-span-2 p-2">
                         {collab.tasks[week] ? (
                            <div className="bg-gray-100 p-2 rounded-md h-full">
-                             <div className="flex justify-between items-center mb-1">
-                               <p className="text-xs text-gray-500">Estimativa: {collab.tasks[week].hours}</p>
+                             <div className="flex flex-col justify-between items-center mb-1">
+                               <p className="text-xs text-gray-500">Estimativa</p>
+                               <span className="text-xl">{collab.tasks[week].hours}</span>
                              </div>
                              <p className="text-sm text-gray-800 font-semibold">{collab.tasks[week].title}</p>
                            </div>
